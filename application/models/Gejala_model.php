@@ -4,7 +4,6 @@ class Gejala_model extends CI_Model{
 
     public function getAllGejala(){
         return $this->db
-        ->order_by('id','asc')
         ->get('gejala')
         ->result_array();
     }

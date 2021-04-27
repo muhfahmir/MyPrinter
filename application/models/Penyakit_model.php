@@ -3,7 +3,6 @@
 class Penyakit_model extends CI_Model{
     public function getAllPenyakit(){
         return $this->db
-        ->order_by('id','asc')
         ->get('penyakit')
         ->result_array();
     }

@@ -75,6 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+	// 'hostname' => 'localhost',
+	// 'username' => 'id16698670_root',
+	// 'password' => 'bLHO6#I6wv@YReQ[',
+	// 'database' => 'id16698670_db_sispak',
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',

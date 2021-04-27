@@ -18,9 +18,18 @@ class RiwayatPage extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	 public function __construct()
+	 {
+		 parent::__construct();
+		 $this->load->model('User_model','m_user');
+		 
+	 }
+
 	public function index()
 	{
 		$data['title']= "Riwayat Page";
+		$data['users'] = $this->m_user->getAllUser();
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/navbar');
 		$this->load->view('riwayatpage');

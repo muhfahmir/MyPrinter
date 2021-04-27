@@ -114,6 +114,41 @@
                         </div> -->
 
                     </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header text-center " style="color:#152c5b ;font-weight:bold">
+                                    <h3>Riwayat Pengguna</h3>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th class="font-weight-bold" style="width: 21px;" id="no-sorting">No
+                                                </th>
+                                                <th class="font-weight-bold">Nama </th>
+                                                <th class="font-weight-bold">Nomor Handphone </th>
+                                                <th class="font-weight-bold">Penyakit </th>
+                                                <th class="font-weight-bold" style="width: 30px;">Detail </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <?php foreach ($users as $i => $user) :?>
+                                            <tr>
+                                                <td><?= $i+1?></td>
+                                                <td><?= $user['nama']?></td>
+                                                <td><?= $user['no_telp']?></td>
+                                                <td><?= $user['analisa']?></td>
+                                                <td><a href="#" class="btn btn-primary">Detail</a></td>
+                                            </tr>
+                                            <?php endforeach;?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->

@@ -8,6 +8,7 @@ class Dashboard extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Gejala_model','m_gejala');
 		$this->load->model('Penyakit_model','m_penyakit');
+		$this->load->model('User_model','m_user');
 	}
 	
 	public function index()
@@ -16,6 +17,7 @@ class Dashboard extends CI_Controller {
 		$data['contentTitle'] = "Dashboard";
 		$data['gejala']= $this->m_gejala->countGejala();
 		$data['penyakit']= $this->m_penyakit->countPenyakit();
+		$data['users'] = $this->m_user->getAllUser();
 		$this->load->view('admin/dashboard/index',$data);
 	}
 

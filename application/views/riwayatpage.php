@@ -16,13 +16,16 @@
                     </tr>
                 </thead>
                 <tbody>
+
+                    <?php foreach ($users as $i => $user) :?>
                     <tr>
-                        <td>3</td>
-                        <td>3</td>
-                        <td>3</td>
-                        <td>3</td>
+                        <td><?= $i+1?></td>
+                        <td><?= $user['nama']?></td>
+                        <td><?= $user['no_telp']?></td>
+                        <td><?= $user['analisa']?></td>
                         <td><a href="#" class="btn btn-primary">Detail</a></td>
                     </tr>
+                    <?php endforeach;?>
                 </tbody>
             </table>
         </div>

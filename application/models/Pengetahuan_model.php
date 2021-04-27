@@ -3,7 +3,6 @@
 class Pengetahuan_model extends CI_Model{
     public function getAllPengetahuan(){
         return $this->db
-        ->order_by('id','asc')
         ->get('rule')
         ->result_array();
     }
