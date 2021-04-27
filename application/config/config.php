@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/sistem-pakar/my-project/';
-// $config['base_url'] = 'https://myprinter073.herokuapp.com/';
+// $config['base_url'] = 'https://myprinteeer073.000webhostapp.com/';
 
 /*
 |--------------------------------------------------------------------------

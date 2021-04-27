@@ -29,7 +29,7 @@ class User_model extends CI_Model{
     }
 
     public function getUserPenyakit(){
-        $this->db->select('*,user.id as id_user, penyakit.nama as nama_penyakit');
+        $this->db->select('*,user.id as id_user, user.nama as nama_pemilik');
         $this->db->from('user');
         $this->db->join('penyakit', 'user.analisa = penyakit.id');
         $query = $this->db->get()->result_array();
