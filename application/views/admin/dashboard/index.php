@@ -140,7 +140,8 @@
                                                 <td><?= $user['nama']?></td>
                                                 <td><?= $user['no_telp']?></td>
                                                 <td><?= $user['analisa']?></td>
-                                                <td><a href="#" class="btn btn-primary">Detail</a></td>
+                                                <td><a href="<?= base_url('admin/dashboard/show/'.$user['id'] )?>"
+                                                        class="btn btn-primary">Detail</a></td>
                                             </tr>
                                             <?php endforeach;?>
                                         </tbody>

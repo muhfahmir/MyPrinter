@@ -30,7 +30,19 @@ class Dashboard extends CI_Controller {
 	}
 
 	public function show($id){
+		$user = $this->m_user->getUserById($id);
+		$data['nama'] = $user['nama'];
+		$data['no_telp'] = $user['no_telp'];
 
+		$gejala = $this->db->get_where('gejala_user',['id_user' => $id])->result_array();
+		foreach($gejala as $i =>$g){
+			$gejala[$i] = $this->m_gejala->getGejalaById($g['gejala']);
+		}
+		$data['gejala'] = $gejala;
+		$data['penyakit'] = $this->m_penyakit->getPenyakitById($user['analisa']);
+		$data['title']= "Hasil Diagnosa";
+		$data['contentTitle'] = "Hasil Diagnosa";
+		$this->load->view('admin/dashboard/detail',$data);
 	}
 
 	public function edit($id){
