@@ -16,14 +16,14 @@
                     </tr>
                 </thead>
                 <tbody>
-
                     <?php foreach ($users as $i => $user) :?>
                     <tr>
                         <td><?= $i+1?></td>
                         <td><?= $user['nama']?></td>
                         <td><?= $user['no_telp']?></td>
-                        <td><?= $user['analisa']?></td>
-                        <td><a href="#" class="btn btn-primary">Detail</a></td>
+                        <td>(<?= $user['analisa']?>)<?= $user['nama_penyakit']?></td>
+                        <td><a href="<?= base_url('riwayatpage/detailPage/'.$user['id_user'])?>"
+                                class="btn btn-primary">Detail</a></td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>

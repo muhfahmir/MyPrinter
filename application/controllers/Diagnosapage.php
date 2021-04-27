@@ -87,7 +87,28 @@ class Diagnosapage extends CI_Controller {
 			$this->load->view('templates/footer');
 		}else{
 			// form error
+			$data['gejala']= $dataGejala;
+			$data['title']= "Diagnosa Page";
+
+			$insert_id=$this->m_gejala->addUser([
+				'nama'=>$nama,
+				'no_telp'=>$no_telp,
+				'analisa'=>"P000"
+				]);
+				
+			foreach ($dataGejala as $gejala) {
+				$this->m_gejala->addGejalaUser([
+					'id_user'=>$insert_id,
+					'gejala'=>$gejala['id']
+					]);
+			}
+			
+			$this->load->view('templates/header',$data);
+			$this->load->view('templates/navbar');
+			$this->load->view('hasilpage');
+			$this->load->view('templates/footer');
 		}
 		
 	}
+
 }

@@ -1,9 +1,10 @@
 <!-- <section id="banner" class="text-center pt-5 pb-3 bg-second-color" style="margin:0">
     <h1 class="text-white " style="font-weight: 600;">Riwayat Diagnosa</h1>
 </section> -->
-
+<?php error_reporting(0)?>
 <section id="content">
     <div class="container">
+
         <div class="card">
             <div class="card-header text-center">
                 Hasil diagnosa
@@ -30,15 +31,29 @@
                     </tr>
                     <tr>
                         <td>Hasil</td>
-                        <td><?= $penyakit['nama']?></td>
+                        <?php if(isset($penyakit)) :?>
+                        <td><?= $penyakit['nama'] ?></td>
+                        <?php else:?>
+                        <td>Kerusakan tidak ditemukan, sepertinya printer anda baik-baik saja.</td>
+                        <?php endif;?>
                     </tr>
                     <tr>
                         <td>Penyebab Kerusakan</td>
+                        <?php if(isset($penyakit)) :?>
                         <td><?= $penyakit['penyebab']?></td>
+                        <?php else:?>
+                        <td>-</td>
+                        <?php endif;?>
+
                     </tr>
                     <tr>
                         <td>Solusi Perbaikan</td>
-                        <td><?= $penyakit['solusi']?></td>
+                        <?php if(isset($penyakit)) :?>
+                        <td><?= $penyakit['solusi'] ?></td>
+                        <?php else:?>
+                        <td>-</td>
+                        <?php endif;?>
+
                     </tr>
                 </table>
             </div>

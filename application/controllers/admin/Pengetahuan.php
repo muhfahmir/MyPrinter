@@ -19,37 +19,8 @@ class Pengetahuan extends CI_Controller {
 		$data['contentTitle'] = "Basis Pengetahuan";
         $penyakits = $this->m_penyakit->getAllPenyakit();
         $gejalas = $this->m_gejala->getAllGejala();
-        $pengetahuan2=
-
-        // $pengetahuans = $this->m_pengetahuan->getAllPengetahuan();
         $pengetahuans = $this->m_pengetahuan->getPengetahuanPenyakit();
-        // var_dump();
-        // die;
-        $dataPengetahuan =[];
-       
-        // for($j=0; $j<count($penyakits);$j++){
-        //     // echo $j."<br/>";
-        //     for ($i=0; $i<count($gejalas);$i++) {
-        //         // echo $i."<br/>";
-        //         for($k=0;$k<count($pengetahuans);$k++){
-        //             // echo $k."<br/>";
-        //             if($penyakits[$j]['id'] == $pengetahuans[$j]['penyakit']){
-        //                 // echo "true"."<br/>";
-        //                 if($gejalas[$i]['id'] == $pengetahuans[$j]['gejala']){
-        //                     $dataPengetahuan[$j][]=1;
-        //                 }else{
-        //                     $dataPengetahuan[$j][]=0;
-        //                 }
-        //             }else{
-        //                 // if(isset($dataPengetahuan[$j][$i])){
-        //                     $dataPengetahuan[$j][]=0;
-        //                 // }
-        //             }
-        //         }
-        //     }
-        // }
-        // var_dump($dataPengetahuan);
-        // die;
+
         $data['pengetahuans'] = $pengetahuans;
         $data['gejalas'] = $gejalas;
         $data['penyakits'] = $penyakits;
